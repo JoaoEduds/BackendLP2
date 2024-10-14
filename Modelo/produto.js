@@ -1,4 +1,5 @@
 import ProdutoDAO from "../Persistencia/produtoDAO.js";
+import Categoria from "./categoria.js";
 export default class Produto{
     //atributos privados
     #codigo;
@@ -8,6 +9,7 @@ export default class Produto{
     #qtdEstoque;
     #urlImagem;
     #dataValidade;
+    #categoria;
 
     get codigo(){
         return this.#codigo;
@@ -65,16 +67,27 @@ export default class Produto{
         this.#dataValidade = novaData;
     }
 
+    get categoria(){
+        return this.#categoria;
+    }
+
+    set categoria(novaCategoria){
+        if(novaCategoria instanceof Categoria){
+            this.#categoria = novaCategoria;
+        }
+    }
+
     //construtor (criador de um produto)
     constructor(codigo=0, descricao="",precoCusto=0,precoVenda=0,qtdEstoque=0,
-                urlImagem="", dataValidade=""){
+                urlImagem="", dataValidade="", categoria={}){
         this.#codigo=codigo;
         this.#descricao=descricao;
         this.#precoCusto=precoCusto;
         this.#precoVenda=precoVenda;
         this.#qtdEstoque=qtdEstoque;
         this.#urlImagem=urlImagem;
-        this.#dataValidade=dataValidade;            
+        this.#dataValidade=dataValidade;
+        this.#categoria=categoria;           
     }
 
     //override do método toJSON
@@ -88,7 +101,8 @@ export default class Produto{
             "precoVenda":this.#precoVenda,
             "qtdEstoque":this.#qtdEstoque,
             "urlImagem":this.#urlImagem,
-            "dataValidade":this.#dataValidade
+            "dataValidade":this.#dataValidade,
+            "categoria":this.categoria
         }
     }
 
