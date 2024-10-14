@@ -15,7 +15,7 @@ export default async function conectar(){
             "port":3306,
             "database":"loja",
             "user":"102317402",
-            "password":"150678",
+            "password":"102317402",
             "connectTimeout":60000,
             "waitForConnections":true,
             "queueLimit":20
