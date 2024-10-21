@@ -9,7 +9,7 @@ export default class Produto{
     #qtdEstoque;
     #urlImagem;
     #dataValidade;
-    #categoria;
+    #categoria
 
     get codigo(){
         return this.#codigo;
@@ -68,11 +68,11 @@ export default class Produto{
     }
 
     get categoria(){
-        return this.#categoria;
+        return this.#categoria
     }
 
     set categoria(novaCategoria){
-        if(novaCategoria instanceof Categoria){
+        if (novaCategoria instanceof Categoria){
             this.#categoria = novaCategoria;
         }
     }
@@ -86,8 +86,8 @@ export default class Produto{
         this.#precoVenda=precoVenda;
         this.#qtdEstoque=qtdEstoque;
         this.#urlImagem=urlImagem;
-        this.#dataValidade=dataValidade;
-        this.#categoria=categoria;           
+        this.#dataValidade=dataValidade;            
+        this.#categoria = categoria;
     }
 
     //override do método toJSON
@@ -102,7 +102,7 @@ export default class Produto{
             "qtdEstoque":this.#qtdEstoque,
             "urlImagem":this.#urlImagem,
             "dataValidade":this.#dataValidade,
-            "categoria":this.categoria
+            "categoria":this.#categoria
         }
     }
 

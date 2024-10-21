@@ -14,8 +14,8 @@ export default async function conectar(){
             "host":process.env.IP_BANCO_DE_DADOS,
             "port":process.env.PORTA_BANCO_DE_DADOS,
             "database":process.env.BASE_DE_DADOS,
-            "user":process.env.DB_USUARIO,
-            "password":process.env.DB_SENHA,
+            "user":process.env.BD_USUARIO,
+            "password":process.env.BD_SENHA,
             "connectTimeout":60000,
             "waitForConnections":true,
             "queueLimit":20

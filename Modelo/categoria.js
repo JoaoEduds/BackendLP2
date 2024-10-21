@@ -1,39 +1,42 @@
-import CategoriaDAO from "../Persistencia/categoriaDAO";
+import CategoriaDAO from "../Persistencia/categoriaDAO.js";
 
-export default class Categoria{
+export default class Categoria {
+    // Atributos privados usando a sintaxe #
     #codigo;
     #descricao;
 
-    get codigo(){
+    // Construtor da classe
+    constructor(codigo, descricao) {
+        this.#codigo = codigo;       // Atribuindo valor ao atributo privado
+        this.#descricao = descricao;  // Atribuindo valor ao atributo privado
+    }
+
+    // Método get para o atributo codigo
+    get codigo() {
         return this.#codigo;
     }
 
-    set codigo(novoCodigo){
-        this.#codigo=novoCodigo;
-    } 
+    // Método set para o atributo codigo
+    set codigo(value) {
+        this.#codigo = value;
+    }
 
-    get descricao(){
+    // Método get para o atributo descricao
+    get descricao() {
         return this.#descricao;
     }
 
-    set descricao(novaDescricao){
-        this.#descricao = novaDescricao;
+    // Método set para o atributo descricao
+    set descricao(value) {
+        this.#descricao = value;
     }
 
-    //construtor (criador de um categoria)
-    constructor(codigo=0, descricao=""){
-        this.#codigo=codigo;
-        this.#descricao=descricao;
-    }
-
-    //override do método toJSON
-    //o método toJSON é chamado automaticamente quando uma categoria
-    //precisar ser convertido no formato JSON
-    toJSON(){
-        return{
-            "codigo": this.#codigo,
-            "descricao": this.#descricao
-        }
+    // Método toJSON para conversão em JSON
+    toJSON() {
+        return {
+            codigo: this.#codigo,
+            descricao: this.#descricao
+        };
     }
 
     async gravar(){
