@@ -7,11 +7,12 @@
 //não esqueça de atualizar o arquivo package.json adicionando a chave "type":"module"
 import express from 'express';
 import rotaProduto from './Rotas/rotaProdutos.js';
-import rotaCategoria from './Rotas/rotaCategoria.js';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import rotaCategoria from './Rotas/rotaCategoria.js';
 
-//carregando as variaveis de ambiente a partir do arquivo .env localizado na raiz do projeto
+//carregar as variáveis de ambiente a partir
+//do arquivo .env localizado na raiz do projeto
 dotenv.config();
 
 const host = "0.0.0.0"; //todas as placas de rede do computador que está executando a aplicação
@@ -31,8 +32,8 @@ app.use(cors({
 app.use(express.static('./publico'));
 
 
-app.use('/produtos', rotaProduto);
-app.use('/categoria', rotaCategoria);
+app.use("/produtos",rotaProduto);
+app.use("/categorias",rotaCategoria);
 //app.use('/clientes',rotaCliente);
 //app.use('/fornecedores', rotaFornecedor);
 //app.use('/usuarios', rotaUsuario);
